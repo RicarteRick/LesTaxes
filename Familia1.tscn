@@ -1,0 +1,99 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scripts/familia1.gd" type="Script" id=1]
+[ext_resource path="res://TechnaSans-Regular.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/dialogoFamilia1.gd" type="Script" id=3]
+[ext_resource path="res://Songs/sfx/Bip-[AudioTrimmer.com].wav" type="AudioStream" id=4]
+[ext_resource path="res://Songs/You_re_Not_Wrong (online-audio-converter.com).ogg" type="AudioStream" id=5]
+[ext_resource path="res://Tilesets/TilesetChao.tres" type="TileSet" id=6]
+[ext_resource path="res://Scripts/Setinha.gd" type="Script" id=7]
+[ext_resource path="res://animFim.tscn" type="PackedScene" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 2 )
+
+[node name="Main" type="Node2D"]
+
+[node name="fundo" type="ColorRect" parent="."]
+margin_left = -16.0
+margin_top = -7.0
+margin_right = 1390.0
+margin_bottom = 785.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2( 13.1052, -135.372 )
+scale = Vector2( 1.30706, 1.50742 )
+color = Color( 0.25098, 0.247059, 0.247059, 0 )
+polygon = PoolVector2Array( 47.2481, 409.867, 45.1874, 579.354, 982.161, 579.354, 982.161, 410.665 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Polygon2D"]
+margin_left = 87.0
+margin_top = 457.0
+margin_right = 944.0
+margin_bottom = 548.0
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0.756863, 0.756863, 0.756863, 1 )
+bbcode_enabled = true
+script = ExtResource( 3 )
+
+[node name="TimerFim" type="Timer" parent="Polygon2D/RichTextLabel"]
+
+[node name="BipPlayer" type="AudioStreamPlayer" parent="Polygon2D/RichTextLabel"]
+stream = ExtResource( 4 )
+volume_db = -60.0
+
+[node name="TimerBip" type="Timer" parent="Polygon2D/RichTextLabel"]
+wait_time = 0.05
+autostart = true
+
+[node name="TimerBip2" type="Timer" parent="Polygon2D/RichTextLabel"]
+wait_time = 0.01
+
+[node name="TristePlayer" type="AudioStreamPlayer" parent="Polygon2D/RichTextLabel"]
+stream = ExtResource( 5 )
+volume_db = -21.216
+
+[node name="Timer" type="Timer" parent="Polygon2D"]
+wait_time = 0.05
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="Polygon2D"]
+zoom = Vector2( 0.35, 0.35 )
+
+[node name="TileMap" type="TileMap" parent="Polygon2D"]
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="TimerSeta" type="Timer" parent="Polygon2D"]
+wait_time = 2.57
+autostart = true
+
+[node name="Setinha" type="Polygon2D" parent="Polygon2D/TimerSeta"]
+visible = false
+position = Vector2( 31.579, 1.05267 )
+color = Color( 0.678431, 0.678431, 0.678431, 1 )
+polygon = PoolVector2Array( 916.79, 533.211, 916.79, 567.948, 938.896, 550.053 )
+script = ExtResource( 7 )
+
+[node name="TimerSetinha" type="Timer" parent="Polygon2D/TimerSeta"]
+
+[node name="TimerComeco" type="Timer" parent="Polygon2D"]
+autostart = true
+
+[node name="ColorRect" parent="Polygon2D" instance=ExtResource( 8 )]
+margin_left = -32.0
+margin_right = 1147.0
+[connection signal="timeout" from="Polygon2D/RichTextLabel/TimerFim" to="Polygon2D/RichTextLabel" method="_on_TimerFim_timeout"]
+[connection signal="timeout" from="Polygon2D/RichTextLabel/TimerBip" to="Polygon2D/RichTextLabel" method="_on_TimerBip_timeout"]
+[connection signal="timeout" from="Polygon2D/RichTextLabel/TimerBip2" to="Polygon2D/RichTextLabel" method="_on_TimerBip2_timeout"]
+[connection signal="timeout" from="Polygon2D/Timer" to="Polygon2D/RichTextLabel" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Polygon2D/TimerSeta" to="Polygon2D" method="_on_TimerSeta_timeout"]
+[connection signal="timeout" from="Polygon2D/TimerSeta/TimerSetinha" to="Polygon2D/TimerSeta/Setinha" method="_on_TimerSetinha_timeout"]
+[connection signal="timeout" from="Polygon2D/TimerComeco" to="Polygon2D" method="_on_TimerComeco_timeout"]

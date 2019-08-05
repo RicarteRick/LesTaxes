@@ -1,0 +1,219 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://Scripts/Splash.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/splash.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/comeco.png" type="Texture" id=3]
+[ext_resource path="res://Calendas_Plus.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://TechnaSans-Regular.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://Comandos.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Sprites/WalkLadoEs1.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/WalkLadoEs2.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/WalkLadoEs3.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/WalkLadoEs4.png" type="Texture" id=10]
+[ext_resource path="res://coin1.png" type="Texture" id=11]
+[ext_resource path="res://coin2.png" type="Texture" id=12]
+[ext_resource path="res://coin3.png" type="Texture" id=13]
+[ext_resource path="res://coin4.png" type="Texture" id=14]
+[ext_resource path="res://coin5.png" type="Texture" id=15]
+[ext_resource path="res://coin6.png" type="Texture" id=16]
+[ext_resource path="res://animFim.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Songs/Happy8bit.ogg" type="AudioStream" id=18]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 14
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 14
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "gira",
+"speed": 13.0
+} ]
+
+[sub_resource type="DynamicFont" id=6]
+size = 24
+font_data = ExtResource( 5 )
+
+[sub_resource type="Animation" id=7]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.521569, 0.0431373, 0.772549, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.521569, 0.0431373, 0.772549, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 682.76, 383.921 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 712.039, 500.594 )
+scale = Vector2( 1.42408, 1.25898 )
+texture = ExtResource( 3 )
+
+[node name="Label2" type="Label" parent="Sprite2"]
+margin_left = -173.696
+margin_top = -349.86
+margin_right = 92.304
+margin_bottom = -285.86
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.521569, 0.0431373, 0.772549, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Taxes"
+
+[node name="Label" type="Label" parent="Sprite2"]
+margin_left = -228.28
+margin_top = -380.921
+margin_right = 37.7198
+margin_bottom = -316.921
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.992157, 1, 0, 1 )
+text = "Les"
+
+[node name="Label3" type="Label" parent="Sprite2"]
+margin_left = 89.9478
+margin_top = -370.84
+margin_right = 271.948
+margin_bottom = -329.84
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Um jogo de coletáveis por
+Gabriel Rios e Rick Ricarte"
+
+[node name="Label4" type="Label" parent="Sprite2"]
+margin_left = 78.0528
+margin_top = -326.102
+margin_right = 253.053
+margin_bottom = -309.102
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.568627, 0, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "@Rios_Gabriel15   @RkPrody"
+
+[node name="Comandos" parent="." instance=ExtResource( 6 )]
+margin_left = 7.5441
+margin_top = 347.536
+margin_right = 375.544
+margin_bottom = 769.536
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="boneco" type="AnimatedSprite" parent="."]
+position = Vector2( 502.726, 260.549 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 4 )
+animation = "Walk"
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( 689.125, 381.013 )
+frames = SubResource( 5 )
+animation = "gira"
+frame = 3
+playing = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
+position = Vector2( 628.125, 381.013 )
+frames = SubResource( 5 )
+animation = "gira"
+frame = 3
+playing = true
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="."]
+position = Vector2( 753.125, 381.013 )
+frames = SubResource( 5 )
+animation = "gira"
+frame = 3
+playing = true
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="."]
+position = Vector2( 813.125, 381.013 )
+frames = SubResource( 5 )
+animation = "gira"
+frame = 3
+playing = true
+
+[node name="ColorRect" parent="." instance=ExtResource( 17 )]
+margin_left = -383.0
+margin_top = -55.0506
+margin_right = 1538.0
+margin_bottom = 795.949
+
+[node name="Button" type="Button" parent="."]
+modulate = Color( 0.521569, 0.0431373, 0.772549, 1 )
+margin_left = 487.299
+margin_top = 539.909
+margin_right = 755.299
+margin_bottom = 604.909
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "INICIAR JOGO"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Button"]
+anims/tchaubotao = SubResource( 7 )
+
+[node name="Button3" type="Button" parent="."]
+modulate = Color( 0.521569, 0.0431373, 0.772549, 1 )
+margin_left = 487.754
+margin_top = 646.305
+margin_right = 755.754
+margin_bottom = 711.305
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "SAIR"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Button3"]
+anims/tchaubotao = SubResource( 8 )
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+volume_db = -27.0
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]

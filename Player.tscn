@@ -1,0 +1,102 @@
+[gd_scene load_steps=32 format=2]
+
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/WalkLado1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/WalkLado2.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/WalkLado3.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/WalkLado4.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Idle1.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Idle2.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Idle3.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Idle4.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/IdleCosta1.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/IdleCosta2.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/IdleCosta3.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/IdleCosta4.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/WalkCosta1.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/WalkCosta2.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/IdleLado1.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/IdleLado2.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/IdleLado3.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/IdleLado4.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Walk1.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/Walk2.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/IdleLadoEs1.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/IdleLadoEs2.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/IdleLadoEs3.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/IdleLadoEs4.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/WalkLadoEs1.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/WalkLadoEs2.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/WalkLadoEs3.png" type="Texture" id=28]
+[ext_resource path="res://Sprites/WalkLadoEs4.png" type="Texture" id=29]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "Walking",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "IdleCosta",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "WalkCosta",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 18 ), ExtResource( 18 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "IdleLado",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 24 ), ExtResource( 24 ), ExtResource( 24 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "IdleLadoEs",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "WalkLadoEs",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 33.9668, 68.6747 )
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 11.5054, -27.0183 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "IdleLadoEs"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2.24774, -0.976676 )
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.35, 0.35 )
+limit_left = 160
+limit_top = 115
+limit_right = 850
+limit_bottom = 650
+smoothing_enabled = true
+drag_margin_left = 0.3
+drag_margin_top = 0.3
+drag_margin_right = 0.3
+drag_margin_bottom = 0.3

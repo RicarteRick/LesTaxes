@@ -1,0 +1,120 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Sprites/fundorei4.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/cicloFinal.gd" type="Script" id=2]
+[ext_resource path="res://TechnaSans-Regular.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://Scripts/dialogoCicloFinal.gd" type="Script" id=4]
+[ext_resource path="res://Songs/sfx/Bip-[AudioTrimmer.com].wav" type="AudioStream" id=5]
+[ext_resource path="res://Songs/14607_man_vento (online-audio-converter.com).ogg" type="AudioStream" id=6]
+[ext_resource path="res://Songs/MAZE (online-audio-converter.com).ogg" type="AudioStream" id=7]
+[ext_resource path="res://Scripts/Setinha.gd" type="Script" id=8]
+[ext_resource path="res://animFim.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Sprites/reizinho1.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/reizinho2.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/reizinho3.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/reizinho4.png" type="Texture" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Main" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.443137, 0.380392, 0.380392, 1 )
+position = Vector2( 688, 464 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2( 11.2131, -135.372 )
+scale = Vector2( 1.30899, 1.50742 )
+color = Color( 0.290196, 0.00784314, 0.372549, 0.192157 )
+polygon = PoolVector2Array( 45.1874, 417.346, 45.1874, 579.354, 982.161, 579.354, 984.502, 417.615 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Polygon2D"]
+margin_left = 87.0
+margin_top = 457.0
+margin_right = 944.0
+margin_bottom = 548.0
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+meta_underlined = false
+script = ExtResource( 4 )
+
+[node name="BipPlayer" type="AudioStreamPlayer" parent="Polygon2D/RichTextLabel"]
+stream = ExtResource( 5 )
+volume_db = -60.0
+
+[node name="TimerBip" type="Timer" parent="Polygon2D/RichTextLabel"]
+wait_time = 0.05
+autostart = true
+
+[node name="TimerBip2" type="Timer" parent="Polygon2D/RichTextLabel"]
+wait_time = 0.01
+
+[node name="HappyPlayer" type="AudioStreamPlayer" parent="Polygon2D/RichTextLabel"]
+stream = ExtResource( 6 )
+volume_db = -27.0
+
+[node name="TensoPlayer" type="AudioStreamPlayer" parent="Polygon2D/RichTextLabel"]
+stream = ExtResource( 7 )
+volume_db = -23.587
+
+[node name="TimerFim" type="Timer" parent="Polygon2D/RichTextLabel"]
+
+[node name="Timer" type="Timer" parent="Polygon2D"]
+wait_time = 0.05
+autostart = true
+
+[node name="TimerSeta" type="Timer" parent="Polygon2D"]
+editor/display_folded = true
+wait_time = 2.57
+autostart = true
+
+[node name="Setinha" type="Polygon2D" parent="Polygon2D/TimerSeta"]
+visible = false
+position = Vector2( 31.579, 1.05267 )
+color = Color( 0.678431, 0.678431, 0.678431, 1 )
+polygon = PoolVector2Array( 916.79, 533.211, 916.79, 567.948, 938.896, 550.053 )
+script = ExtResource( 8 )
+
+[node name="TimerSetinha" type="Timer" parent="Polygon2D/TimerSeta"]
+
+[node name="ColorRect" parent="Polygon2D" instance=ExtResource( 9 )]
+margin_left = -198.0
+margin_top = 25.0
+margin_right = 1408.0
+
+[node name="TimerComeco" type="Timer" parent="Polygon2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 11.2131, -135.372 )
+scale = Vector2( 1.30899, 1.50742 )
+zoom = Vector2( 0.1, 0.1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -864, -32 )
+frames = SubResource( 2 )
+frame = 6
+playing = true
+[connection signal="timeout" from="Polygon2D/RichTextLabel/TimerBip" to="Polygon2D/RichTextLabel" method="_on_TimerBip_timeout"]
+[connection signal="timeout" from="Polygon2D/RichTextLabel/TimerBip2" to="Polygon2D/RichTextLabel" method="_on_TimerBip2_timeout"]
+[connection signal="timeout" from="Polygon2D/RichTextLabel/TimerFim" to="Polygon2D/RichTextLabel" method="_on_TimerFim_timeout"]
+[connection signal="timeout" from="Polygon2D/Timer" to="Polygon2D/RichTextLabel" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Polygon2D/TimerSeta" to="Polygon2D" method="_on_TimerSeta_timeout"]
+[connection signal="timeout" from="Polygon2D/TimerSeta/TimerSetinha" to="Polygon2D/TimerSeta/Setinha" method="_on_TimerSetinha_timeout"]
+[connection signal="timeout" from="Polygon2D/TimerComeco" to="Polygon2D" method="_on_TimerComeco_timeout"]
