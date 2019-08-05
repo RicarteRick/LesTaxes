@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/tristeCortado.ogg-2071fcebae1791e9b51c15db1d0e03fc.oggstr"
+
+[deps]
+
+source_file="res://Songs/tristeCortado.ogg"
+dest_files=[ "res://.import/tristeCortado.ogg-2071fcebae1791e9b51c15db1d0e03fc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/BeepBox-Song (online-audio-converter.com)-[AudioTrimmer.com].ogg-f2290daeff20ac00ba204025043c2cd8.oggstr"
+
+[deps]
+
+source_file="res://Songs/sfx/BeepBox-Song (online-audio-converter.com)-[AudioTrimmer.com].ogg"
+dest_files=[ "res://.import/BeepBox-Song (online-audio-converter.com)-[AudioTrimmer.com].ogg-f2290daeff20ac00ba204025043c2cd8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

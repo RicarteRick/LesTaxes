@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/MAZE (online-audio-converter.com).ogg-c654dd96daf9d15416a595faf3a0ac95.oggstr"
+
+[deps]
+
+source_file="res://Songs/MAZE (online-audio-converter.com).ogg"
+dest_files=[ "res://.import/MAZE (online-audio-converter.com).ogg-c654dd96daf9d15416a595faf3a0ac95.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

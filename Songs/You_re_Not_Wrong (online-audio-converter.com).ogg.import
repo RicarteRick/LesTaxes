@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/You_re_Not_Wrong (online-audio-converter.com).ogg-e1083921ab22d74c985fd209ee74813b.oggstr"
+
+[deps]
+
+source_file="res://Songs/You_re_Not_Wrong (online-audio-converter.com).ogg"
+dest_files=[ "res://.import/You_re_Not_Wrong (online-audio-converter.com).ogg-e1083921ab22d74c985fd209ee74813b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
