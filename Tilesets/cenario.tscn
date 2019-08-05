@@ -1,0 +1,102 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Tilesets/sprites cenário.png" type="Texture" id=1]
+
+[node name="Node2D" type="TileMap"]
+format = 1
+
+[node name="piso1" type="Sprite" parent="."]
+position = Vector2( 0, -0.773788 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 193.941, 344.036, 33.2868, 34.4547 )
+
+[node name="piso2" type="Sprite" parent="."]
+position = Vector2( 52.4324, 0 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 408.659, 341.245, 31.6977, 33.5845 )
+
+[node name="piso3" type="Sprite" parent="."]
+position = Vector2( 103.338, 0 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 656.202, 339.358, 32.8298, 33.5845 )
+
+[node name="piso4" type="Sprite" parent="."]
+position = Vector2( 161.054, 0.716972 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 214.372, 755.213, 32.5798, 33.8093 )
+
+[node name="fog1" type="Sprite" parent="."]
+position = Vector2( 2.21355, 53.9646 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 212.678, 298.585, 69.433, 34.7166 )
+
+[node name="fog2" type="Sprite" parent="."]
+position = Vector2( 49.2137, 99.9647 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 426.641, 295.941, 79.2443, 36.6033 )
+
+[node name="fog3" type="Sprite" parent="."]
+position = Vector2( 100.214, 54.9646 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 677.957, 294.431, 76.2255, 38.1127 )
+
+[node name="fog4" type="Sprite" parent="."]
+position = Vector2( 158.214, 98.9647 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 234.217, 697.504, 75.3332, 38.2506 )
+
+[node name="pedrinha1" type="Sprite" parent="."]
+position = Vector2( -0.786514, -116.036 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 232.762, 350.88, 37.1217, 30.5356 )
+
+[node name="pedrinha2" type="Sprite" parent="."]
+position = Vector2( 51.2136, -121.036 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 451.301, 347.288, 41.9116, 33.5293 )
+
+[node name="pedrinha3" type="Sprite" parent="."]
+position = Vector2( 104.214, -120.036 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 704.566, 347.887, 40.7141, 29.3381 )
+
+[node name="pedrinha4" type="Sprite" parent="."]
+position = Vector2( 166.214, -114.036 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 263.653, 763.044, 38.5263, 32.1866 )
+
+[node name="pedrona1" type="Sprite" parent="."]
+position = Vector2( 3.21355, -52.0356 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 269.356, 330.376, 46.6416, 56.3112 )
+
+[node name="pedrona2" type="Sprite" parent="."]
+position = Vector2( 54.2137, -53.0356 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 495.17, 329.238, 47.7792, 58.5864 )
+
+[node name="pedrona3" type="Sprite" parent="."]
+position = Vector2( 111.214, -52.0356 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 749.993, 325.255, 47.2104, 58.0176 )
+
+[node name="pedrona4" type="Sprite" parent="."]
+position = Vector2( 170.214, -57.0357 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 305.189, 737.636, 50.0544, 64.2744 )
